@@ -27,8 +27,6 @@ public class MMMM {
 
     }
 
-
-
     public static <T> T toObject(String str, Class<T> clazz) {
         try {
             return mapper.readValue(str, clazz);
