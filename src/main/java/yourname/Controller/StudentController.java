@@ -1,12 +1,20 @@
 package yourname.Controller;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.catalina.User;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import yourname.Entity.Student;
 import yourname.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.print.attribute.standard.Media;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Collection;
 
 @RestController
@@ -40,5 +48,16 @@ public class StudentController {
     public void insertStudent(@RequestBody Student student) {
         studentService.insertStudent( student );
     }
+    /**
+     * Below is the test
+     */
+    @RequestMapping("create")
+    public void create(@RequestBody User user) throws IOException {
+        String jsonStr = Files.readString(Path.of("user.json"), StandardCharsets.US_ASCII);
 
+//        URL jsonUrl = new URL("localhost:8080/students");
+//        String jsonStr = "{\"studentID\":{\"5\",\"course\":\"Computer\",\"name\":\"Brian\"}";
+
+
+    }
 }

@@ -14,4 +14,7 @@ public interface StudentDao {
     void updateStudent(Student student);
 
     void insertStudentToDb(Student student);
+
+
+    void insertTest(Student student);//TEST
 }
